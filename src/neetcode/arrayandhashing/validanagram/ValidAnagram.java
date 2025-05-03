@@ -1,7 +1,7 @@
 package neetcode.arrayandhashing.validanagram;
 
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class ValidAnagram {
     public boolean isAnagram(String s, String t) {
@@ -20,6 +20,23 @@ public class ValidAnagram {
 
         return set1.equals(set2);
     }
+
+
+        public boolean isAnagramNeetcodeSOlution(String s, String t) {
+        //Used the same idea of early return if length is different
+        if (s.length() != t.length()) {
+                return false;
+            }
+
+            // Convert the strings to char arrays and sort them
+            char[] sSort = s.toCharArray();
+            char[] tSort = t.toCharArray();
+            Arrays.sort(sSort);
+            Arrays.sort(tSort);
+            // Compare the sorted arrays
+            return Arrays.equals(sSort, tSort);
+        }
+
 
     public static void main(String[] args) {
         String s = "anagram";
